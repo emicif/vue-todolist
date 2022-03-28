@@ -14,36 +14,42 @@
         <div class="container">
             <div class="todo-list">
                 <h2>TO DO LIST</h2>
-                <ul>
-                    <li class="list" v-for="(items, index) in todoList">
-                        <div class="list-items" v-if="!doneList.includes(index)">
-                            <i class="fa-solid fa-circle-xmark"
-                            @click="isDone(index)"></i>
-                            {{items.text}}
-                        </div>
-                    </li>
-                </ul>
-                <div>
+                <div class="list-li">
+                    <ul>
+                        <li class="list" v-for="(items, index) in todoList">
+                            <div class="list-items" v-if="!doneList.includes(index)" >
+                                <i class="fa-solid fa-circle-xmark"
+                                @click="isDone(index)" ></i>
+                                {{items.text}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+              
+                <div class="input-button">
                     <input 
                     type="text" 
                     v-model="newItems" 
                     placeholder="Devi fare altro?" 
-                    @keyUp.enter="addItems">
+                    @keyUp.enter="addItems()">
                     <button @click="addItems">Aggiungi alla lista</button>
                 </div>
             </div>
 
             <div class="list-items" v-if="doneList.length > 0">
                 <h2>DONE LIST</h2>
-                <ul>
-                    <li class="list" v-for="(items, index) in todoList">
-                        <div v-if="doneList.includes(index)">
-                            <i class="fa-solid fa-circle-check"
-                            @click="isDone(index)"></i>
-                            {{items.text}}
-                        </div>
-                    </li>
-                </ul>
+                <div class="list-li">
+                    <ul>
+                        <li class="list" v-for="(items, index) in todoList">
+                            <div v-if="doneList.includes(index)">
+                                <i class="fa-solid fa-circle-check"
+                                @click="isDone(index)"></i>
+                                <s>{{items.text}}</s>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

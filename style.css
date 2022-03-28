@@ -5,16 +5,28 @@
 }
 
 .container {
-  margin: 10px auto;
+  margin: 30px auto;
+  max-width: 1200px;
 }
 
 .list-items {
-  padding: 10px;
+  padding: 20px;
 }
 
 h2 {
   font-size: 50px;
   text-align: center;
+  border: 1px solid #85133a;
+  border-radius: 50%;
+  padding: 50px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+li {
+  border-bottom: 1px solid #85133a;
 }
 
 .list {
@@ -22,5 +34,31 @@ h2 {
 }
 
 .input {
-  background-color: red;
+  background-color: #e50548;
+}
+
+.input-button {
+  margin: 20px auto;
+  padding: 10px;
+}
+input {
+  padding: 10px;
+  width: 500px;
+}
+
+button {
+  background-color: #fddcb3;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.list i {
+  color: #e50548;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e50548;
 }

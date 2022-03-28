@@ -10,34 +10,38 @@ Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
 MILESTONE 1
     - Stampare all'interno di una lista, un item per ogni todo.
     - Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
-MILESTONE 2
+X MILESTONE 2
     - Visualizzare a fianco ad ogni item ha una "x": 
     - cliccando su di essa, il todo viene rimosso dalla lista.
-MILESTONE 3
+X MILESTONE 3
     - Predisporre un campo di input testuale e un pulsante "aggiungi": 
-    - cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+    - cliccando sul pulsante, il testo digitato viene letto e 
+    utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
 Bonus:
-1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
-2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+X 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
+2- cliccando sul testo dell'item, 
+invertire il valore della proprietà done del todo corrispondente 
+(se done era uguale a false, impostare true e viceversa)
 */
 
 
 const array = [
     {
         text: 'Fare la spesa',
-        done: 'Fatto',
+        done: false,
     },
     {
         text: 'Andare in palestra',
-        done: 'Fatto',
+        done: false,
     },
     {
         text: 'Andare al cinema',
-        done: 'Fatto',
+        done: false,
     }
 ];
 
 console.log(array);
+console.log(array[0].done); // stampa il primo gruppo di graffe
 
 // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 const app = new Vue (
@@ -47,27 +51,37 @@ const app = new Vue (
         todoList: array,
         doneList: [],
         newItems: '',
+
+
     },
     methods: {
         isDone (todoListIndex) {
-            console.log(todoListIndex);
             this.doneList.push(todoListIndex);
-            console.log('doneList', todoListIndex);
-            this.doneList.push(this.todoList.done);
+            if((this.todoList[0].done)===true){
+                console.log(array[0].done);
+            }; 
         },
+
         addItems(){
 
             const newItem = this.newItems.trim();
 
             if (newItem.length > 0) {
-                this.todoList.unshift({text: newItem, done:''});
-                this.newItem = '';
-                console.log(newItem);
+                this.todoList.push({text: newItem, done: false});
+                this.newItems = '';
                 console.log(this.todoList);
             }
             
         }
+
     }
     }
 );
 
+// console.log(teams.nome); // se fosse solo object
+
+// console.log([0]) // mi stampa 0
+
+// console.log(teams[0]); // stampa il primo gruppo di graffe
+
+// console.log((teams[0].nome)); // stampare solo il primo nome 
