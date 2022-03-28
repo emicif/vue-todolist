@@ -10,17 +10,37 @@
     <title>Vue To Do List</title>
 </head>
 <body>
-    <div id="app">
+    <div id="root">
         <div class="container">
-            <h1>TO DO LIST</h1>
-            <ul>
-                <li class="list" v-for="(items, index) in todoList" >
-                    <div>
-                        <i class="fa-solid fa-circle-check" @click="isDone(index)"></i>
-                        {{items.text}} - {{items.done}}
-                    </div>
-                </li>
-            </ul>
+            <div class="todo-list">
+                <h2>TO DO LIST</h2>
+                <ul>
+                    <li class="list" v-for="(items, index) in todoList">
+                        <div v-if="!doneList.includes(index)">
+                            <i class="fa-solid fa-circle-xmark"
+                            @click="isDone(index)"></i>
+                            {{items.text}}
+                        </div>
+                    </li>
+                </ul>
+                <div>
+                    <input type="text" placeholder="Devi fare altro?" @keyUp.enter="addItems">
+                    <button @click="addItems">Aggiungi alla lista</button>
+                </div>
+            </div>
+
+            <div class="done-list" v-if="doneList.length > 0">
+                <h2>DONE LIST</h2>
+                <ul>
+                    <li class="list" v-for="(items, index) in todoList">
+                        <div v-if="doneList.includes(index)">
+                            <i class="fa-solid fa-circle-check"
+                            @click="isDone(index)"></i>
+                            {{items.text}}
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
