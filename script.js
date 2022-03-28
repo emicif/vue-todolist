@@ -46,7 +46,7 @@ const app = new Vue (
     data: { 
         todoList,
         doneList: [],
-        newItem: '',
+        newItems: '',
     },
     methods: {
         isDone (todoListIndex) {
@@ -57,7 +57,7 @@ const app = new Vue (
         },
         addItems(){
 
-            const newItem = this.newItem.trim();
+            const newItem = this.newItems.trim();
 
             if (newItem.length > 0) {
                 this.todoList.unshift(newItem);
