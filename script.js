@@ -60,7 +60,7 @@ const app = new Vue (
             const newItem = this.newItem.trim();
 
             if (newItem.length > 0) {
-                this.todoList.push(newItem);
+                this.todoList.unshift(newItem);
                 this.newItem = '';
             }
             
