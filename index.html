@@ -10,9 +10,14 @@
 </head>
 <body>
     <div id="app">
-
+        <div class="container">
+            <h1>TO DO LIST</h1>
+            <ul>
+                <li class="list" v-for="items in todoList">{{items.text}} - {{items.done}}</li>
+            </ul>
+        </div>
     </div>
 
-    
+    <script src="script.js"></script>
 </body>
 </html>

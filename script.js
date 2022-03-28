@@ -20,23 +20,29 @@ Bonus:
 */
 
 
-const todos = [
+const todoList = [
     {
-    text: 'Fare la spesa',
-    done: ''
+        text: 'Fare la spesa',
+        done: 'Fatto',
     },
     {
-    text: 'Andare in palestra',
-    done: ''
+        text: 'Andare in palestra',
+        done: 'Fatto',
+    },
+    {
+        text: 'Andare al cinema',
+        done: 'Fatto',
     }
-    ];
-    console.log(todos);
-    
+];
+
+console.log(todoList);
+
+
 const app = new Vue (
     {
     el: '#app',
     data: { 
-        todos,
+        todoList,
     }
     }
 );
