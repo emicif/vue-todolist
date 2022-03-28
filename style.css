@@ -5,7 +5,10 @@
 }
 
 .container {
-  margin: 30px auto;
+  margin: 10px auto;
+}
+
+.list-items {
   padding: 10px;
 }
 

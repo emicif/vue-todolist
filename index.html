@@ -16,7 +16,7 @@
                 <h2>TO DO LIST</h2>
                 <ul>
                     <li class="list" v-for="(items, index) in todoList">
-                        <div v-if="!doneList.includes(index)">
+                        <div class="list-items" v-if="!doneList.includes(index)">
                             <i class="fa-solid fa-circle-xmark"
                             @click="isDone(index)"></i>
                             {{items.text}}
@@ -24,12 +24,16 @@
                     </li>
                 </ul>
                 <div>
-                    <input type="text" placeholder="Devi fare altro?" @keyUp.enter="addItems">
+                    <input 
+                    type="text" 
+                    v-model="newItem" 
+                    placeholder="Devi fare altro?" 
+                    @keyUp.enter="addItems">
                     <button @click="addItems">Aggiungi alla lista</button>
                 </div>
             </div>
 
-            <div class="done-list" v-if="doneList.length > 0">
+            <div class="list-items" v-if="doneList.length > 0">
                 <h2>DONE LIST</h2>
                 <ul>
                     <li class="list" v-for="(items, index) in todoList">
