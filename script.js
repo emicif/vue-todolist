@@ -22,7 +22,7 @@ Bonus:
 */
 
 
-const todoList = [
+const array = [
     {
         text: 'Fare la spesa',
         done: 'Fatto',
@@ -37,14 +37,14 @@ const todoList = [
     }
 ];
 
-console.log(todoList);
+console.log(array);
 
 // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 const app = new Vue (
     {
     el: '#root',
     data: { 
-        todoList,
+        todoList: array,
         doneList: [],
         newItems: '',
     },
@@ -60,8 +60,10 @@ const app = new Vue (
             const newItem = this.newItems.trim();
 
             if (newItem.length > 0) {
-                this.todoList.unshift(newItem);
+                this.todoList.unshift({text: newItem, done:''});
                 this.newItem = '';
+                console.log(newItem);
+                console.log(this.todoList);
             }
             
         }
