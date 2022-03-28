@@ -37,12 +37,18 @@ const todoList = [
 
 console.log(todoList);
 
-
+// Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 const app = new Vue (
     {
     el: '#app',
     data: { 
         todoList,
+        doneList: [],
+    },
+    methods: {
+        isDone (todoListIndex) {
+            console.log(todoListIndex);
+        }
     }
     }
 );
