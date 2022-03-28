@@ -14,9 +14,9 @@
         <div class="container">
             <h1>TO DO LIST</h1>
             <ul>
-                <li class="list" v-for="(items, index) in todoList">
-                    <div @click="isDone(index)">
-                        <i class="fa-solid fa-circle-check"></i>
+                <li class="list" v-for="(items, index) in todoList" >
+                    <div>
+                        <i class="fa-solid fa-circle-check" @click="isDone(index)"></i>
                         {{items.text}} - {{items.done}}
                     </div>
                 </li>
